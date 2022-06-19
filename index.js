@@ -11,10 +11,11 @@ var MCQ = require('./models/mcq');
 var Subject = require('./models/subject');
 var local = require('passport-local');
 var path = require('path');
+require('dotenv').config();
 const axios = require('axios');
 var passportLocalMongoose = require('passport-local-mongoose');
 
-mongoose.connect('mongodb+srv://ishan:malik@cluster0.tv5em.mongodb.net/?retryWrites=true&w=majority', {
+mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
